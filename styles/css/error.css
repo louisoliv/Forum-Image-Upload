@@ -1,0 +1,32 @@
+.body {
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+}
+.Error_message_container{
+    background: linear-gradient(#031227, #0e443e);    
+    text-align: center;
+    min-height: 98vh;
+}
+.Error_Number{
+    font-family: 'Big Shoulders Display';
+    text-transform: uppercase;   
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 5px #fff,
+                 0 0 50px #0ff;
+    padding: 10px;
+}
+@keyframes Error_Number {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  
+.Gif_placement {
+    padding: 4vh;
+}

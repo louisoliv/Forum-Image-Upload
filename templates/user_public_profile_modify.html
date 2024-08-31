@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
+    <link href="../styles/css/user_public_profile_modify.css" rel="stylesheet">
+    <source src="../styles/img/&fond_blog.png" >
+    <title>Modification du profil public</title>
+</head>
+<body>
+    <body>
+        <div class="title_user"> 
+            <h1 class="your_profil_style">PROFIL PUBLIC DE {{.User.Username}}</h1>
+        </div>
+    
+        <div class="container_user_profile"> 
+            <div class="container_info">
+                <div class="container_both_part_right_left">
+                    <div class="container_part_left">
+                        <!-- <div class="container_all_info_left"> -->
+                            <div class="avatar">
+                                <div class="image_place">
+                                    <img src="../styles/img/img_user.png">
+                                </div>
+                                <form action="/photo-profil_test.html" method="get" class="login_form_col_left">
+                                    <button class="button_choose_img" type="submit">Choisir image</button>
+                                </form>
+                                <form action="" method="post" class="login_form_col_left">
+                                    <input class="status_placeholder" id="status" value="ROLE / STATUT" type="text" name="status" disabled>                   
+                                </form>
+                            </div>
+                                <div class="contact_details">
+                                    <p><h3 class="col_title">CONTACT</h3></p>
+                                    <form action="" method="post" class="login_form_col_left">
+                                        <input class="Email_placeholder" id="mail" value="{{.User.Email}}" type="text" name="mail" disabled>                   
+                                    </form>
+                                </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="container_part_right">
+                        <div class="a_propos_details">
+                            <p><h3 class="col_title_a_propos">A PROPOS</h3></p>
+                        </div>
+                        <div class="info_formulaire_a_propos">
+                            <form action="/info" method="post" class="info-form">
+                                <input class="Localisation" id="localisation_placehoplder" placeholder="LOCALISATION :" type="text" name="Localisation">
+                                <input class="Status" id="status_placeholder" placeholder="EMPLOI / STATUT SOCIAL :" type="text" name="status">
+                                <input class="Loisis" id="loisirs_placeholder" placeholder="LOISIRS :" type="text" name="loisirs">
+                                <input class="Date_naissance" id="date_naissance_placeholder" placeholder="DATE DE NAISSANCE :" type="text" name="date_naissance">
+                                <input class="Sexe" id="sexe_placeholder" placeholder="SEXE :" type="text" name="sexe">
+                                <button class="button_form_info" type="submit" >Appliquer les changements</button>
+                            </form>
+                            <!-- <table>
+                                <!-- <thead>
+                                    <tr>
+                                        <th>Column 1</th>
+                                        <th>Column 2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span>INSCRIT LE : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>TOUS LES MESSAGES : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>LOCALISATION : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>EMPLMOI / STATUT SOCIAL : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>LOISIRS : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>DATE DE NAISSANCE : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>SEXE : </span></td>
+                                        <td><span> </span></td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col_under_user_info">
+                <div class="back_to_blog">
+                    <form action="blog.html" id="blog" method="get" ></form>
+                    <button class="button_to_blog" type="submit" form="blog">RETOUR AU BLOG</button>
+                </div>
+                <div class="modify_user_profile">
+                    <form action="/publicuserpage" id="pub" method="get" >
+                        <button class="button_to_user_modif" type="submit" >RETOUR AU PROFIL PUBLIC</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- ICON SCRIPT -->
+        <script src="https://unpkg.com/feather-icons"> 
+        </script>
+        <script>
+          feather.replace();
+        </script>
+        <script src="../test.js"></script>
+    </body>
+    </html>

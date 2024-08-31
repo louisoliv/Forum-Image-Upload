@@ -1,0 +1,328 @@
+body{
+  margin: 0%;
+  background-image: url(/styles/img/fond_blog.png);
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.title_user {
+  display: flex;
+  justify-content: center;
+  font-family: 'Big Shoulders Display', cursive;
+  background-color: rgba(128, 128, 128, 0.6);
+  padding: 10px;
+  border: 1px solid #010101;
+  border-radius: 50px;
+  box-sizing: border-box;
+  width: 70%;
+  margin: auto;
+  margin-top: 3vh;
+}
+.your_profil_style {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size:  40px;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+}
+.container_user_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  min-height: 85%;
+}
+.container_info{
+  background-color: rgba(128, 128, 128, 0.6);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 70vw;
+}
+.container_col {
+  height: 65%;
+  width: 75%;
+  /* background-color: orange; */
+  display: flex;
+  margin: 3vh;
+}
+.col_left_user_info {
+  margin: 3vh;
+  /* background-color: blue; */
+  width: 50%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+.login_form_col_left {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; 
+  margin: auto;
+}
+.login_form_col_left input[type="text"] {
+  width: 100%;
+  margin: 8px 0;
+  border: 1px solid #010101;
+  border-radius: 50px;
+  box-sizing: border-box;
+  height: 5vh; 
+  background-color: rgba(206,217,232,0.8);
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+}
+.col_right_user_info{
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items:center;
+  margin: 3vh;  
+  width: 50%;
+}
+.col_right_user_info button {
+  width: 95%;
+  margin: 1.5vh;
+  border: 1px solid #010101;
+  border-radius: 50px;
+  box-sizing: border-box;
+  height: auto;
+  background-color: rgba(206,217,232,0.5);
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.button_user_history_created_post, 
+.button_user_history_liked_post,
+.button_user_comments {
+  width: 50%;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow:hidden;
+  transition: 0.3s;
+  margin: 0;
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 50px;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+}
+.button_user_history_created_post:hover, 
+.button_user_history_liked_post:hover,
+.button_user_comments:hover {
+  background: cyan;
+  box-shadow:  0 0 5px #fff,
+               0 0 50px #0ff;
+  transition-delay: 1s;
+}
+.col_under_user_info {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  height: 10vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50px;
+}
+.back_to_blog, .modify_user_profile, .back_to_user_public_profile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh;  
+  width: 50%;
+}
+.button_to_blog, .button_to_user_modif, .button_to_public_profile{
+  position: relative;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow:hidden;
+  transition: 0.3s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 50px;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+}
+
+.button_to_blog:hover, .button_to_user_modif:hover, .button_to_public_profile:hover{
+  background: cyan;
+  box-shadow:  0 0 5px #fff,
+               0 0 50px #0ff;
+  transition-delay: 1s;
+}
+a{
+  text-decoration: none;
+}
+
+
+/*Pour les téléphones*/
+
+
+@media only screen and (max-width: 600px)  {
+  body{
+    margin: 0%;
+    background-image: url(/styles/img/fond_blog.png);
+     width: 100%;
+    z-index: -1; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+    .title_user{
+     font-size: 20px;
+    }
+     .your_profil_style{
+      font-size: 20px;
+      text-align: center
+    } 
+
+    .container_user_profile {
+      margin-bottom: 5vh;
+    }
+
+    .container_info{
+      width: 90vw;
+      height: auto;
+      margin-top: 10vh;
+    }
+     .container_col{
+      width: 100%;
+      font-size: 90px;
+      display: flex;
+      flex-direction: column;
+    } 
+    
+    .col_left_user_info {
+      width: auto;
+    }
+
+    .col_right_user_info {
+      width: auto;
+    }
+
+    .col_right_user_info button {
+      align-items: center;
+      height: auto;
+      font-size: 15px;
+    }
+
+    .col_under_user_info {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .back_to_blog,
+    .back_to_user_public_profile,
+    .modify_user_profile {
+      width: auto;
+    }
+
+
+    .button_to_blog{
+      font-size: 15px;
+    }
+    .button_to_public_profile{
+      font-size: 15px;
+    }
+    .button_to_user_modif{
+     font-size: 15px;
+    }
+  }
+
+
+/*Pour les tablettes*/
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  body{
+    margin: 0%;
+    background-image: url(/styles/img/fond_blog.png);
+     width: 100%;
+    z-index: -1; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title_user{
+    font-size: 20px;
+  }
+  
+  .your_profil_style{
+    font-size: 30px;
+    text-align: center
+  } 
+
+  .container_user_profile {
+    margin-bottom: 5vh;
+  }
+
+  .container_info{
+    width: 90vw;
+    height: auto;
+    margin-top: 10vh;
+  }
+     
+  .container_col{
+    width: 100%;
+    font-size: 90px;
+    display: flex;
+    flex-direction: column;
+  } 
+    
+  .col_left_user_info {
+    width: auto;
+  }
+
+  .col_right_user_info {
+    width: auto;
+  }
+
+  .col_right_user_info button {
+    align-items: center;
+    height: auto;
+    font-size: 20px;
+  }
+
+  .col_under_user_info {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .back_to_blog,
+  .back_to_user_public_profile,
+  .modify_user_profile {
+    width: auto;
+  }
+
+  .button_to_blog, 
+  .button_to_public_profile,
+  .button_to_user_modif{
+    font-size: 20px;
+  }
+
+}

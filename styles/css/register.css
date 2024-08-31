@@ -1,0 +1,428 @@
+.body {
+  margin: 0%;
+    
+}
+  
+#myVideo {
+  /* Faites en sorte que la vidéo prenne toute la largeur et la hauteur */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Assurez-vous que la vidéo est en arrière-plan */
+}
+  
+.back {
+  position: fixed;
+  opacity: 1;
+  background: url(../../video/forumreduit.mp4) center center / cover;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+  
+.neon {
+  font-family: 'Big Shoulders Display', cursive;
+  font-weight: 700;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  font-size: 200px;
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+}
+  
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+  
+.invité {
+  margin-left: 4vw;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  margin-bottom: 5vh; 
+  height: 5vh;
+}
+
+.error_message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  margin-top: 3vh;
+  height: 5vh; 
+  color: rgb(230, 29, 29);
+  font-family: 'Big Shoulders Display', cursive;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+  
+/* .button_invite{
+  width: 16vw;
+  border-radius: 50px;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 25px;
+  background-color: rgb(68, 68, 68);
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+} */
+  
+a{
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 25px;
+  overflow:hidden;
+  transition: 0.3s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;  
+}
+  
+a:hover {
+  background: cyan;
+  box-shadow:  0 0 5px #fff,
+               0 0 50px #0ff;
+   transition-delay: 1s;
+}
+  
+  
+a span {
+  position:absolute;
+  display: block;
+}
+  
+a span:nth-child(1) {
+  top: 0;
+  left: -100%; 
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, cyan);
+}
+  
+a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+  
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%; 
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, cyan);
+}
+  
+a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+  
+  
+a span:nth-child(2) {
+  top: -100%;
+  right: 0; 
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, cyan);
+}
+  
+a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+  
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0; 
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, cyan);
+}
+  
+a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+  
+  
+  
+  
+.connexion{
+   /*background-color: rgb(94, 87, 87);*/
+    width: 25vw;
+}
+  
+.h2{
+  text-align: center;
+  color: white;
+}
+  
+.login-form {
+  width: 100%;
+  border-radius: 8px;  
+  margin: 0;
+}
+  
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #010101;
+  border-radius: 50px;
+  box-sizing: border-box;
+  height: 5vh; 
+  background-color: rgba(128, 128, 128, 0.5);
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 0px 0px rgba(43,250,250, 0.75), 
+               0px 1px rgba(43,250,250, 0.75), 
+               1px 0px rgba(43,250,250, 0.75), 
+}
+  
+.login-form input[type="submit"] {
+  width: 100%;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 25px;
+  background-color: #172755;
+  color: #ffffff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 85%;
+}
+.Confirmation_Mot_de_passe_searchbar {
+  margin-top: 4vh;
+}
+/* Partie mot de passe avec oeil pour caché */
+label {
+  display: flex;
+  position: relative;
+  height: 5vh; 
+  align-items: center;
+  margin: 8px 0;
+  width: 100%;
+}
+label input.Mot_de_passe_searchbar, label input.Confirmation_Mot_de_passe_searchbar{
+  background: transparent;
+  color: #f9f9f9;
+  border: 1px solid #7a7a7a;
+  padding: 1rem 1.2rem;
+  transition: all 1s;
+}
+label input.Mot_de_passe_searchbar:focus, label input.Confirmation_Mot_de_passe_searchbar:focus {
+  border-color: cyan;
+}
+label .password-icon{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  color: #f9f9f9;
+  transition: all 0.2s;
+  right: 20px;
+}
+label .password-icon2{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  color: #f9f9f9;
+  transition: all 0.2s;
+  right: 20px;
+}
+label .password-icon .feather-eye-off {
+  display: none;
+}
+label .password-icon2 .feather-eye-off {
+  display: none;
+}
+label .password-icon:hover {
+  cursor: pointer;
+  color: cyan;
+}
+label .password-icon2:hover {
+  cursor: pointer;
+  color: cyan;
+}
+/* Finv partie mot de passe  */
+#connexion_button{
+  width: 100%;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 25px;
+  background-color: #172755;
+  color: #ffffff;
+  text-shadow: 0 0 5px #fff,
+               0 0 50px #0ff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 85%;
+}
+  
+#connexion_button:hover {
+  background-color: cyan;
+  opacity: 100%;
+}
+  
+.login-form button[type="submit"]:hover {
+  background-color: cyan;
+  opacity: 100%;
+}
+  
+.other_connexion{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 10px;
+  padding:15px ;
+  margin-top: 2vh;
+}
+    
+.button_git_gg {
+  display:flex; 
+  padding: 20px; 
+  align-items: center; 
+  justify-content: space-between;
+  border-radius: 60px;
+}
+  
+.github_link{
+  min-height:30px; 
+  background-color: white; 
+  font-family:'Roboto',sans-serif;
+  font-size:14px; 
+  text-decoration:none;
+  padding-top:5px;
+  padding-bottom: 5px;
+  min-height:30px; 
+  border-radius: 20px;
+}
+  
+.image_github {
+  height: 80px;
+  width: 80px;
+  padding: 0.5vw;
+}
+  
+.image_google {
+  height: 80px;
+  width: 80px;
+  padding: 0.5vw;
+}
+  
+.google_link{
+  min-height:30px;
+  background-color: white; 
+  font-family:'Roboto',sans-serif;
+  font-size:14px; color:white; 
+  text-decoration:none;
+  padding-top:5px;
+  padding-bottom: 5px;         
+  min-height:30px;
+  border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 600px)  {
+  body{
+    margin: 0%;
+    background-image: url(/styles/img/fond_blog.png);
+    /* width: 100%;
+    height: 100vh;
+    z-index: -1; */
+  } 
+  /* .back{
+    display: none;
+    background-color: #0ff;
+  } */
+  #myVideo{
+    position: absolute;
+    z-index: -1;
+    display: none;
+    }
+  .neon {
+    position: absolute;
+    top: 0;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    font-size: 60px;
+  }
+  .connexion{
+    width: 140%;
+    position: absolute;
+    margin-left: 100%;
+    margin-top: 60%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  body{
+    margin: 0%;
+    background-image: url(/styles/img/fond_blog.png);
+    /* width: 100%;
+    height: 100vh;
+    z-index: -1; */
+  } 
+  /* .back{
+    display: none;
+    background-color: #0ff;
+  } */
+  #myVideo{
+    position: absolute;
+    z-index: -1;
+    display: none;
+    }
+  .neon {
+    position: absolute;
+    top: 0;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    font-size: 100px;
+  }
+  .connexion{
+    width: 170%;
+    position: absolute;
+    margin-left: 100%;
+    margin-top: 60%;
+  }
+} 

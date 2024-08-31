@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
+    <link href="../styles/css/login.css" rel="stylesheet">
+    <video autoplay muted loop id="myVideo">
+        <source src="../styles/video/Forum.mp4"type= "video/mp4">
+        Votre navigateur ne prend pas en charge la vidéo HTML5.
+    </video>
+</head>
+<body> 
+    <div class="back">
+        <div class="title">
+            <h1 class="neon"><B> Z01 FORUM</B></h1>
+        </div>
+        <div class="mail_verif_div">
+          <!-- <button class="comment_button" type="submit">Commentaire</button> -->
+          <a href="#.Mail_Verif" class="link_a_demo">Mail_verif</a>
+          <div id=".Mail_Verif" class="modal">
+              <div class="modal_content">    
+                  <h2 class="Email_message_verif">A validation mail has been sent to your address <br> please check it before log in</h2>
+                    <a href="#" class="modal_close">&times;</a>
+              </div>  
+          </div>            
+      </div>
+        <div class="invité">
+          <form action="/index" method="get" class="blog-button-form">
+            <button class="button_invite" type="submit"> MODE INVITE</button>
+              <!-- <a href="blog.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                MODE INVITE
+            </a> -->
+          </form>
+        </div>
+        <div class="connexion">
+          <form action="/login" method="post" class="login-form">
+            <input name="log[]" class="Email_searchbar" id="mail" placeholder="PSEUDO" type="text" name="mail" required="">            <!-- Updated Password Section -->
+            <label> 
+              <!-- CHAMP DE FORMULAIRE-->
+              <input name="log[]" class="Mot_de_passe_searchbar" placeholder="MOT DE PASSE" type="password" id="password" name="password" required="">
+              <!-- Icônes-->
+              <div class="password-icon">
+                  <i data-feather="eye" class="feather-eye"></i>
+                  <i data-feather="eye-off" class="feather-eye-off"></i>
+              </div>
+            </label>
+            <button class="connexion_button" type="submit" value="submit">
+              SE CONNECTER
+            </button>
+          </form>
+          <form action="/registerform" method="post" class="login-form-v2">
+            <button class="connexion_button" type="submit" value="submit">
+              CREER UN COMPTE
+            </button>
+            {{range .}}
+            {{if .ErrorMessage}}
+            <div class="error_message">{{ .ErrorMessage}}</div>
+            {{end}}
+            {{end}}  
+          </form>
+            <div class="other_connexion">
+              <div class="github_link">
+                <a href ="#"> <img class="image_github" src="../styles/img/github.svg"> </a>
+              </div>
+              <div class="google_link">
+                <a href="#"> <img class="image_google" src="../styles/img/google.svg">  </a>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- ICON SCRIPT -->
+    <script src="https://unpkg.com/feather-icons"> 
+    </script>
+    <script>
+      feather.replace();
+    </script>
+    <script type="text/javascript" src="../styles/js/test.js"></script>
+</body>
+</html>
+

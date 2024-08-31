@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
+    <link href="../styles/css/register.css" rel="stylesheet">
+    <video autoplay muted loop id="myVideo">
+        <source src="../styles/video/Forum.mp4" type= "video/mp4">
+        Votre navigateur ne prend pas en charge la vidéo HTML5.
+    </video>
+</head>
+<body> 
+    <div class="back">
+        <div class="neon" <B>Z01 FORUM</B>
+        </div>
+        {{range .}}
+        {{if .ErrorMessage}}
+        <div class="error_message">{{ .ErrorMessage}}</div>
+        {{end}}
+        {{end}}
+        <div class="connexion">
+          <form action="/submitregister" method="post" class="login-form">
+            <input name="register[]" class="Pseudo_searchbar" id="pseudo_searchbar" placeholder="PSEUDO" type="text" name="pseudo" required="">
+            <input name="register[]" class="FirstName_searchbar" id="FirstName_searchbar" placeholder="PRENOM" type="text" name="prénom" required="">
+            <input name="register[]" class="Name_searchbar" id="name_searchbar" placeholder="NOM" type="text" name="nom" required="">
+            <input name="register[]" class="Email_searchbar" id="mail" placeholder="EMAIL" type="email" name="mail" required="">
+            <!-- Password field -->
+            <label> 
+              <input name="register[]" class="Mot_de_passe_searchbar" placeholder="MOT DE PASSE" type="password" id="password" name="password" required="">
+              <!-- Icons -->
+              <div class="password-icon">
+                <i data-feather="eye" id="eye"></i>
+                <i data-feather="eye-off" id="eye-off"></i>
+              </div>
+            </label>
+            <!-- Confirmation Password field -->
+            <label> 
+              <input name="register[]" class="Confirmation_Mot_de_passe_searchbar" placeholder="CONFIRMATION MOT DE PASSE" type="password" id="password_confirmation" name="password_Confirmation" required="">
+              <!-- Icons -->
+              <div class="password-icon2">
+                <i data-feather="eye" id="eye_confirmation"></i>
+                <i data-feather="eye-off" id="eye-off_confirmation"></i>
+              </div>
+            </label>
+            <button id="connexion_button" type="submit" value="submit">
+              S'ENREGISTRER
+            </button>
+            <div class="other_connexion">
+              <div class="github_link">
+                <a href ="#"> <img class="image_github" src="../styles/img/github.svg"> </a>
+              </div>
+              <div class="google_link">
+                <a href="#"> <img class="image_google" src="../styles/img/google.svg">  </a>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+      <!-- ICON SCRIPT-->
+      <script src="https://unpkg.com/feather-icons"></script>
+      <script>
+          feather.replace();
+      </script>
+      <script src="../styles/js/test.js"></script>
+</body>
+</html>

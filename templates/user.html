@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
+    <link href="../styles/css/user.css" rel="stylesheet">
+    <source src="../styles/img/&fond_blog.png">
+</head>
+<body>
+    <div class="title_user"> 
+        <h1 class="your_profil_style">VOTRE PROFIL ({{ .User.Username }})</h1>
+    </div>
+    <div class="container_user_profile"> 
+        <div class="container_info">
+            <div class="container_col">
+                <div class="col_left_user_info">
+                    <form action="" method="post" class="login_form_col_left">
+                        <input class="pseudo_placeholder" id="pseudo_place" value="{{ .User.Username }}" type="text" name="pseudo" required="" disabled>
+                        <input class="name_placeholder" id="name_place" value="{{ .User.Lastname }}" type="text" name="name" required="" disabled>
+                        <input class="firstname" id="firstname_place" value="{{ .User.Firstname }}" type="text" name="firsname" required="" disabled>
+                        <input class="Email_searchbar" id="mail" value="{{ .User.Email }}" type="text" name="mail" required="" disabled>
+                    </form>
+                </div>
+                <div class="col_right_user_info">
+                    <form action="/historic_created_post" method="post">
+                        <button class="button_user_history_created_post"  name="histo" value="{{ .User.Id}}" type="submit">HISTORIQUE DES POSTS CREES</button>
+                    </form>
+                    <form action="/historic_liked_posts" method="POST">
+                        <button class="button_user_history_liked_post" type="submit">HISTORIQUE DES POSTS AIMES</button>
+                    </form>
+                    <!-- <form action="/historic_comments" method="POST">
+                        <button class="button_user_comments" type="submit">HISTORIQUE DES COMMENTAIRES</button>
+                    </form> -->
+                </div>
+            </div>
+            <div class="col_under_user_info">
+                <div class="back_to_blog">
+                    <form action="/index" method="get">
+                        <button class="button_to_blog" type="submit">RETOUR AU BLOG</button>
+                    </form>
+                </div>
+                <div class="back_to_user_public_profile">
+                    <form action="/user_public_profile" method="get">
+                        <button class="button_to_public_profile" name="userpublic" value="{{.User.Username}}" type="submit">PROFIL PUBLIC</button>
+                    </form>
+                </div>
+                <div class="modify_user_profile">
+                    <form action="modify_user_profile" method="POST">
+                        <button class="button_to_user_modif" name="user" value="{{ .User.Id}}"type="submit" >MODIFIER VOTRE PROFIL</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ICON SCRIPT -->
+    <script src="https://unpkg.com/feather-icons"> 
+    </script>
+    <script>
+      feather.replace();
+    </script>
+    <script type="text/javascript" src="../styles/js/test.js"></script>
+</body>
+</html>

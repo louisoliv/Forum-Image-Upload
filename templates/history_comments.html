@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
+    <link href="../styles/css/history_comments.css" rel="stylesheet">
+    <source src="../styles/img/&fond_blog.png" >
+    <title>History Comments</title>
+</head>
+<body>
+    <div class="title_user"> 
+        <h1 class="your_profil_style">HISTORIQUE DES COMMENTAIRES ({{ .Username }})</h1>
+    </div>
+    <div class="container_user_profile"> 
+        <div class="div1">
+            <p><h3 class="col_title">CATEGORIES</h3></p>
+            <p class="find_categories">Voici les filtres à disposition :</p>
+            <div class="all_searchbar_filters">
+                <div class="searchbar" id="search"> 
+                    <div class="searchbar_input_button_near">
+                        <form class="form-inline" action="/search" method="GET">
+                            <div class="searchbar_input_container">
+                                <label for="Category">Une idée précise ?</label>
+                                    <input type="text" name="search" id="searchInput" placeholder="Que recherchez-vous ?" list="suggestions">
+                            </div>
+                            <button class = "search_button" type="submit">Rechercher</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="category_list"> 
+                        <label for="Category">Quelle catégorie vous intéresserait ?</label>
+                        <select name="category" id="Category">
+                            <option value="Golang">Golang</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Rust">Rust</option>
+                            <option value="HTML/CSS">HTML/CSS</option>
+                            <option value="Angular">Angular</option>
+                            <option value="Python">Python</option>
+                        </select>
+                    </div>
+                    <div class="created_post">
+                        <input type="checkbox" id="post" name="post" />
+                        <label for="Post">Posts créés</label>
+                    </div>
+                    <div class="liked_post">
+                        <input type="checkbox" id="liked_post" name="liked_post" />
+                        <label for="Liked_post">Posts aimés</label>
+                    </div>
+                    <div class="more_liked_and_comment">
+                        <label for="more_liked_and_comment">Les plus aimés ou commentés</label>
+                        <select name="category_posts_comments" id="Category_posts_and_comments">
+                            <option value="Posts les plus aimés">Posts les plus aimés</option>
+                            <option value="Posts les plus commentés">Posts les plus commentés</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_info">
+            <div class="container_comment">
+                <div class="all_comments_and_form">
+                    <div class="all_comments">
+                    <!-- <p>Bienvenue sur la fenêtre modale !</p> -->
+                        <div class="windox_comment">
+                            <div class="container_info_comment">
+                                <div class="post_comment">
+                                    <div class="bandeau_comment">
+                                        <form class="pseudo_comment" action="../templates/user_public_profile.html" method="GET">
+                                            <button type="submit" class="bouton_pseudo_comment">Hello</button>
+                                        </form>
+                                    </div>
+                                    <div class="zone_text_comment"> 
+                                        <textarea id="textp_comment" cols="100" rows="10" disabled></textarea>
+                                    </div>
+                                    <div class="bandeau_button_like_dislike_time_comment">
+                                        <div class="date_info_comment">
+                                            <label>
+                                                Date : TIME
+                                            </label>
+                                        </div>
+                                    <div class="button_like_and_dislike_comment">
+                                        <form action="/user" method="post">
+                                            {{ if .Username }}
+                                              <button class="button_like_comment" type="submit">J'aime</button>
+                                            {{ else }}
+                                                <button class="button_like_comment" type="submit" disabled>J'aime</button>
+                                            {{ end}}
+                                        </form>
+                                        <form action="/user" method="post">
+                                            {{ if .Username }} 
+                                                <button class="button_dislike_comment" type="submit">J'aime pas</button>
+                                            {{ else }}
+                                                <button class="button_dislike_comment" type="submit" disabled>J'aime pas</button>
+                                            {{ end }}
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_info_comment">
+                            <div class="post_comment">
+                                <div class="bandeau_comment">
+                                    <form class="pseudo_comment" action="../templates/user_public_profile.html" method="GET">
+                                        <button type="submit" class="bouton_pseudo_comment">Hello</button>
+                                    </form>
+                                </div>
+                                <div class="zone_text_comment"> 
+                                    <textarea id="textp_comment" cols="100" rows="10" disabled></textarea>
+                                </div>
+                                <div class="bandeau_button_like_dislike_time_comment">
+                                    <div class="date_info_comment">
+                                        <label>
+                                            Date : TIME
+                                        </label>
+                                    </div>
+                                    <div class="button_like_and_dislike_comment">
+                                        <button class="button_like_comment" type="submit">J'aime</button>
+                                        <button class="button_dislike_comment" type="submit">J'aime pas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_info_comment">
+                            <div class="post_comment">
+                                <div class="bandeau_comment">
+                                    <form class="pseudo_comment" action="../templates/user_public_profile.html" method="GET">
+                                        <button type="submit" class="bouton_pseudo_comment">Hello</button>
+                                    </form>
+                                </div>
+                                <div class="zone_text_comment"> 
+                                    <textarea id="textp_comment" cols="100" rows="10" disabled></textarea>
+                                </div>
+                                <div class="bandeau_button_like_dislike_time_comment">
+                                    <div class="date_info_comment">
+                                        <label>
+                                            Date : TIME
+                                        </label>
+                                    </div>
+                                    <div class="button_like_and_dislike_comment">
+                                        <button class="button_like_comment" type="submit">J'aime</button>
+                                        <button class="button_dislike_comment" type="submit">J'aime pas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_info_comment">
+                            <div class="post_comment">
+                                <div class="bandeau_comment">
+                                    <form class="pseudo_comment" action="../templates/user_public_profile.html" method="GET">
+                                        <button type="submit" class="bouton_pseudo_comment">Hello</button>
+                                    </form>
+                                </div>
+                                <div class="zone_text_comment"> 
+                                    <textarea id="textp_comment" cols="100" rows="10" disabled></textarea>
+                                </div>
+                                <div class="bandeau_button_like_dislike_time_comment">
+                                    <div class="date_info_comment">
+                                        <label>
+                                            Date : TIME
+                                        </label>
+                                    </div>
+                                    <div class="button_like_and_dislike_comment">
+                                        <button class="button_like_comment" type="submit">J'aime</button>
+                                        <button class="button_dislike_comment" type="submit">J'aime pas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form_write">
+                    <p>Nous aurons la partie pour écrire le commentaire !</p>
+                    <form class="form_comment" action="" method="GET">
+                        <input class="write_comment" type="text" placeholder="Ajouter un commentaire...">
+                        <button class="button_send_comment" type="submit">Commenter</button>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col_under_user_info">
+        <div class="back_to_blog">
+            <form action="/index" method="GET">
+                <button class="button_to_blog" type="submit">RETOUR AU BLOG</button>
+            </form>
+        </div>
+        <div class="back_to_user_info">
+            <form action="/user" method="GET">
+                <button class="button_to_user_info" type="submit">RETOUR AU PROFIL</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+                    

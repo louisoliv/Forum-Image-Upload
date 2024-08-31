@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
+    <link href="../styles/css/history_liked_posts.css" rel="stylesheet">
+    <source src="../styles/img/&fond_blog.png" >
+    <title>History Created Posts</title>
+</head>
+<body>
+    <div class="title_user">
+        {{$Username := .User.Username}} 
+        <h1 class="your_profil_style" name="user" value="{{ .User.Username}}" >HISTORIQUE DES POSTS LIKES  
+            {{ if .User.Username }}
+            ({{ .User.Username }}) 
+        {{ else }}
+            (Visiteur)
+        {{ end }}
+        </h1>
+    </div>
+    <div class="contenaire">
+        <div class="div2">
+            <div class="title_categ"><p><h3 class="col_title">BLOG</h3></p></div>
+            <!-- <p>Retrouvez ici tous les articles de notre blog</p> -->
+            <div class="all_user_posts">
+                {{ $error4 := .User.ErrorMessage4}}
+                {{ $error := .User.ErrorMessage2 }}
+                {{ $error5 := .User.ErrorMessage5 }}
+                {{$Username := .User.Username}}
+                {{ $comment := .Comments }}
+                {{$posts := .Posts}}
+                {{range .LikE}}
+                {{if eq $Username .Username }}
+                {{ $token := .Token}}
+                {{range $posts}}
+                {{if eq $token .Token}}
+                <div class="container_info_post_created">
+                    <div class="post_created">
+                        <div class="bandeau_post_crées">
+                            <!-- <a href="user_public_profile.html"><p class="Pseudo"> Pseudo</p></a> -->
+                            <form class="pseudo" action="/user_public_profile" method="GET">
+                                <button type="submit" class="bouton_pseudo_post_crées">{{.Username}}</button>
+                            </form>
+                            <div class="icon-container-posts-crées">
+                                <input value="Catégories" id="Categorie_posts_crées" disabled>
+                                <div class="context-menu-posts-crées">
+                                    {{if .Golang}}
+                                    <label> Golang </label>
+                                {{end}}
+                                {{if .JavaScript}}
+                                <label> JavaScript </label>
+                                {{end}}
+                                {{if .Rust}}
+                                <label> Rust </label>
+                                    {{end}}
+                                {{if .HTML_CSS}}
+                                <label> HTML/CSS </label>
+                                {{end}}
+                                {{if .Angular}}
+                                    <label> Angular </label>
+                                {{end}}
+                                {{if .Python}}
+                                <label> Python </label>
+                                {{end}}
+                                {{if .Autre}}
+                                <label> Autre </label>
+                                {{end}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zone_text"> 
+                            <textarea id="textp" cols="100" rows="10" disabled>{{.Message}}</textarea>
+                            {{if .Image}}
+                                <img class="image_post" src="{{.Image}}">
+                            {{end}}
+                            {{if $error5 }}
+                                <div class="error_message2"> <img src="/styles/img/error_logo2.png" id="erro_logo2" alt="Exit"> {{ $error5 }}</div>
+                            {{end}}
+                        </div>
+                        <div class="bandeau_bas_time_post_comment">
+                            <div class="date_info">
+                                <label>
+                                    {{.Date}}
+                                </label>
+                            </div>
+                            <div class="button_like_and_dislike">
+                                <form action="/like" method="post">
+                                    <input type="hidden" name="from" value="historic_liked_posts">
+                                        <button class="button_like" name="like" value="{{.Token}}"type="submit">J'aime {{.Like}}</button>
+                                </form>
+                                <form action="/dislike" method="post">
+                                    <input type="hidden" name="from" value="historic_liked_posts">
+                                        <button class="button_dislike" name="like" value="{{.Token}}" type="submit">J'aime pas {{.Dislike}}</button>
+                                </form>
+                            </div>
+                                <div class="comment_div">
+                                    <!-- <button class="comment_button" type="submit">Commentaire</button> -->
+                                    <a href="#{{.Token}}" class="link_a_demo">Commentaire</a>
+                                    <div id="{{.Token}}" class="modal">
+                                        <div class="modal_content">    
+                                            <div class="all_comments_and_form">
+                                                <div class="all_comments">
+                                                    {{ $token := .Token}}
+                                                    {{range $comment }}
+                                                    {{if eq $token .TokenComment}}
+                                                        <!-- <p>Bienvenue sur la fenêtre modale !</p> -->
+                                                        <div class="windox_comment">
+                                                            <div class="container_info_comment">
+                                                                <div class="post_comment">
+                                                                    <div class="bandeau_comment">
+                                                                        <form class="pseudo_comment" action="/publicuserpage" method="POST">
+                                                                            <button type="submit" class="bouton_pseudo_comment">{{.Username}}</button>
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="zone_text_comment"> 
+                                                                        <textarea id="textp_comment" name="message" cols="100" rows="10" disabled>{{.Message_comment}}</textarea>
+                                                                    </div>
+                                                                    <div class="bandeau_button_like_dislike_time_comment">
+                                                                        <div class="date_info_comment">
+                                                                            <label>
+                                                                                {{.Date}}
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="button_like_and_dislike_comment">
+                                                                            <form action="/user" method="post">
+                                                                                <button class="button_like" name="like" value="{{.TokenID}}" type="submit"><p>{{.Like}}</p><p>|</p>J'aime pas</button>
+                                                                            </form>
+                                                                            <form action="/user" method="post">
+                                                                                <button class="button_dislike" name="like" value="{{.TokenID}}" type="submit"><p>{{.Dislike}}</p><p>|</p>J'aime pas</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {{end}}
+                                                    {{end}}
+                                                </div>
+                                                <div class="form_write">
+                                                    <!-- <p>Nous aurons la partie pour écrire le commentaire !</p> -->
+                                                    <form class="form_comment" action="/comment" method="POST">
+                                                        <input class="write_comment" name="comment" type="text" placeholder="Ajouter un commentaire...">
+                                                        <button class="button_send_comment" name="tokenpost" value="{{.Token}}" type="submit">Commenter</button>
+                                                    </form>
+                                                </div>
+                                                
+                                                {{if $error}}
+                                                    <div class="error_message2"> <img src="/styles/img/error_logo2.png" id="erro_logo2" alt="Exit"> {{ $error }}</div>
+                                                {{end}}
+                                                {{if $error4}}
+                                                    <div class="error_message2"> <img src="/styles/img/error_logo2.png" id="erro_logo2" alt="Exit"> {{ $error4 }}</div>
+                                                {{end}}
+                                                <a href="#" class="modal_close">&times;</a>
+                                            </div>    
+                                        </div>  
+                                    </div>          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{end}}
+                {{end}}
+                {{end}}
+                {{end}}
+            </div>
+        </div>
+    </div>
+    <div class="col_under_user_info">
+        <div class="back_to_blog">
+            <form action="/index" method="GET">
+                <button class="button_to_blog" type="submit">RETOUR AU BLOG</button>
+            </form>
+        </div>
+        <div class="back_to_user_info">
+            <form action="/user" method="GET">
+                <button class="button_to_user_info" type="submit"  name="user" value="{{ .User.Id }}">RETOUR AU PROFIL</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
